@@ -16,13 +16,13 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 Route::middleware('auth')->group(function () {
-    Route::view('about', 'about')->name('about');
-    Route::get('users', [\App\Http\Controllers\UserController::class, 'index'])->name('users.index');
+    // Route::view('about', 'about')->name('about');
+    // Route::get('users', [\App\Http\Controllers\UserController::class, 'index'])->name('users.index');
 
-    // Employee Management
-    Route::get('employee', [\App\Http\Controllers\employeecontroller::class, 'index'])->name('employee.index');
-    //end of employee management
+    // // Employee Management
+    // Route::get('employee', [\App\Http\Controllers\employeecontroller::class, 'index'])->name('employee.index');
+    // //end of employee management
 
-    Route::get('profile', [\App\Http\Controllers\ProfileController::class, 'show'])->name('profile.show');
-    Route::put('profile', [\App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
+    // Route::get('profile', [\App\Http\Controllers\ProfileController::class, 'show'])->name('profile.show');
+    // Route::put('profile', [\App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
 });
