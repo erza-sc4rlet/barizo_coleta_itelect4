@@ -26,4 +26,27 @@ class employeecontroller extends Controller
             // return redirect ()->back()->with('status','Employee Updated Successfully!');
             // }
 
+        
+    public function edit(int $id){
+        $employees = employee::find($id);
+        return view('employee.edit',compact('employees'));
+    }
+
+
+    public function update(Request $request, int $id){
+        $request->validate([
+
+            //FIELDS HERE
+        ]);
+            employee::findOrFail($id)->update($request->all());
+            return redirect ()->back()->with('status','Employee Updated Successfully!');
+            }
+
+    
+    public function destroy(int $id){
+        $employees = employee::findOrFail($id);
+        $employees = delete();
+        return redirect()->back()->with('status','Employee Deleted');
+    }
+
 }
